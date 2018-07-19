@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+- (IBAction)targetStringTextField:(UITextField *)sender;
 
 @end
 
@@ -16,7 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+}
+
+- (IBAction)QRCodeCamera:(UIButton *)sender {
+    
+}
+- (IBAction)QRCodeAlbum:(UIButton *)sender {
+    
 }
 
 
@@ -26,4 +34,6 @@
 }
 
 
+- (IBAction)targetStringTextField:(UITextField *)sender {
+}
 @end

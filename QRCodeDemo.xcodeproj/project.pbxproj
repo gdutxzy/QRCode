@@ -13,10 +13,12 @@
 		544B791220FF23C300EEFE35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 544B791120FF23C300EEFE35 /* Assets.xcassets */; };
 		544B791520FF23C300EEFE35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 544B791320FF23C300EEFE35 /* LaunchScreen.storyboard */; };
 		544B791820FF23C300EEFE35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 544B791720FF23C300EEFE35 /* main.m */; };
+		544B792120FF426600EEFE35 /* QRCodeImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 544B792020FF426600EEFE35 /* QRCodeImageGenerator.m */; };
+		54ABF7312100273A00D4EB0C /* QRCodeGeneratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ABF7302100273A00D4EB0C /* QRCodeGeneratorViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		544B790520FF23C200EEFE35 /* QRCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		544B790520FF23C200EEFE35 /* QRCodeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		544B790820FF23C200EEFE35 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		544B790920FF23C200EEFE35 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		544B790B20FF23C200EEFE35 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -26,6 +28,11 @@
 		544B791420FF23C300EEFE35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		544B791620FF23C300EEFE35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		544B791720FF23C300EEFE35 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		544B791F20FF426600EEFE35 /* QRCodeImageGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeImageGenerator.h; sourceTree = "<group>"; };
+		544B792020FF426600EEFE35 /* QRCodeImageGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeImageGenerator.m; sourceTree = "<group>"; };
+		54ABF72F2100273A00D4EB0C /* QRCodeGeneratorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeGeneratorViewController.h; sourceTree = "<group>"; };
+		54ABF7302100273A00D4EB0C /* QRCodeGeneratorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeGeneratorViewController.m; sourceTree = "<group>"; };
+		54ABF73221002F3D00D4EB0C /* QRCodeShortcutFuntion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeShortcutFuntion.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +49,7 @@
 		544B78FC20FF23C200EEFE35 = {
 			isa = PBXGroup;
 			children = (
-				544B790720FF23C200EEFE35 /* QRCode */,
+				544B790720FF23C200EEFE35 /* QRCodeDemo */,
 				544B790620FF23C200EEFE35 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,23 +57,36 @@
 		544B790620FF23C200EEFE35 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				544B790520FF23C200EEFE35 /* QRCode.app */,
+				544B790520FF23C200EEFE35 /* QRCodeDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		544B790720FF23C200EEFE35 /* QRCode */ = {
+		544B790720FF23C200EEFE35 /* QRCodeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				544B791E20FF409300EEFE35 /* QRCode */,
 				544B790820FF23C200EEFE35 /* AppDelegate.h */,
 				544B790920FF23C200EEFE35 /* AppDelegate.m */,
 				544B790B20FF23C200EEFE35 /* ViewController.h */,
 				544B790C20FF23C200EEFE35 /* ViewController.m */,
+				54ABF72F2100273A00D4EB0C /* QRCodeGeneratorViewController.h */,
+				54ABF7302100273A00D4EB0C /* QRCodeGeneratorViewController.m */,
+				54ABF73221002F3D00D4EB0C /* QRCodeShortcutFuntion.h */,
 				544B790E20FF23C200EEFE35 /* Main.storyboard */,
 				544B791120FF23C300EEFE35 /* Assets.xcassets */,
 				544B791320FF23C300EEFE35 /* LaunchScreen.storyboard */,
 				544B791620FF23C300EEFE35 /* Info.plist */,
 				544B791720FF23C300EEFE35 /* main.m */,
+			);
+			path = QRCodeDemo;
+			sourceTree = "<group>";
+		};
+		544B791E20FF409300EEFE35 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				544B791F20FF426600EEFE35 /* QRCodeImageGenerator.h */,
+				544B792020FF426600EEFE35 /* QRCodeImageGenerator.m */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -74,9 +94,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		544B790420FF23C200EEFE35 /* QRCode */ = {
+		544B790420FF23C200EEFE35 /* QRCodeDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 544B791B20FF23C300EEFE35 /* Build configuration list for PBXNativeTarget "QRCode" */;
+			buildConfigurationList = 544B791B20FF23C300EEFE35 /* Build configuration list for PBXNativeTarget "QRCodeDemo" */;
 			buildPhases = (
 				544B790120FF23C200EEFE35 /* Sources */,
 				544B790220FF23C200EEFE35 /* Frameworks */,
@@ -86,9 +106,9 @@
 			);
 			dependencies = (
 			);
-			name = QRCode;
+			name = QRCodeDemo;
 			productName = QRCode;
-			productReference = 544B790520FF23C200EEFE35 /* QRCode.app */;
+			productReference = 544B790520FF23C200EEFE35 /* QRCodeDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -97,6 +117,7 @@
 		544B78FD20FF23C200EEFE35 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = QRCode;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = xiezongyuan;
 				TargetAttributes = {
@@ -105,7 +126,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 544B790020FF23C200EEFE35 /* Build configuration list for PBXProject "QRCode" */;
+			buildConfigurationList = 544B790020FF23C200EEFE35 /* Build configuration list for PBXProject "QRCodeDemo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,7 +139,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				544B790420FF23C200EEFE35 /* QRCode */,
+				544B790420FF23C200EEFE35 /* QRCodeDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -142,7 +163,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				544B790D20FF23C200EEFE35 /* ViewController.m in Sources */,
+				544B792120FF426600EEFE35 /* QRCodeImageGenerator.m in Sources */,
 				544B791820FF23C300EEFE35 /* main.m in Sources */,
+				54ABF7312100273A00D4EB0C /* QRCodeGeneratorViewController.m in Sources */,
 				544B790A20FF23C200EEFE35 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +307,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = QRCode/Info.plist;
+				DEVELOPMENT_TEAM = 9934CD68ND;
+				INFOPLIST_FILE = "$(SRCROOT)/QRCodeDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +324,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = QRCode/Info.plist;
+				DEVELOPMENT_TEAM = 9934CD68ND;
+				INFOPLIST_FILE = "$(SRCROOT)/QRCodeDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,7 +339,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		544B790020FF23C200EEFE35 /* Build configuration list for PBXProject "QRCode" */ = {
+		544B790020FF23C200EEFE35 /* Build configuration list for PBXProject "QRCodeDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				544B791920FF23C300EEFE35 /* Debug */,
@@ -323,7 +348,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		544B791B20FF23C300EEFE35 /* Build configuration list for PBXNativeTarget "QRCode" */ = {
+		544B791B20FF23C300EEFE35 /* Build configuration list for PBXNativeTarget "QRCodeDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				544B791C20FF23C300EEFE35 /* Debug */,

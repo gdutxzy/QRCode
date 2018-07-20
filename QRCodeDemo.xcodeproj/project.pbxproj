@@ -15,6 +15,8 @@
 		544B791820FF23C300EEFE35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 544B791720FF23C300EEFE35 /* main.m */; };
 		544B792120FF426600EEFE35 /* QRCodeImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 544B792020FF426600EEFE35 /* QRCodeImageGenerator.m */; };
 		54ABF7312100273A00D4EB0C /* QRCodeGeneratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ABF7302100273A00D4EB0C /* QRCodeGeneratorViewController.m */; };
+		54ABF73521003BF800D4EB0C /* QRCodoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ABF73421003BF800D4EB0C /* QRCodoAlbumViewController.m */; };
+		54ABF7382100406900D4EB0C /* QRCodeImageConvertToText.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ABF7372100406900D4EB0C /* QRCodeImageConvertToText.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,10 @@
 		54ABF72F2100273A00D4EB0C /* QRCodeGeneratorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeGeneratorViewController.h; sourceTree = "<group>"; };
 		54ABF7302100273A00D4EB0C /* QRCodeGeneratorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeGeneratorViewController.m; sourceTree = "<group>"; };
 		54ABF73221002F3D00D4EB0C /* QRCodeShortcutFuntion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeShortcutFuntion.h; sourceTree = "<group>"; };
+		54ABF73321003BF800D4EB0C /* QRCodoAlbumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodoAlbumViewController.h; sourceTree = "<group>"; };
+		54ABF73421003BF800D4EB0C /* QRCodoAlbumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodoAlbumViewController.m; sourceTree = "<group>"; };
+		54ABF7362100406900D4EB0C /* QRCodeImageConvertToText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeImageConvertToText.h; sourceTree = "<group>"; };
+		54ABF7372100406900D4EB0C /* QRCodeImageConvertToText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeImageConvertToText.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,8 @@
 				544B790C20FF23C200EEFE35 /* ViewController.m */,
 				54ABF72F2100273A00D4EB0C /* QRCodeGeneratorViewController.h */,
 				54ABF7302100273A00D4EB0C /* QRCodeGeneratorViewController.m */,
+				54ABF73321003BF800D4EB0C /* QRCodoAlbumViewController.h */,
+				54ABF73421003BF800D4EB0C /* QRCodoAlbumViewController.m */,
 				54ABF73221002F3D00D4EB0C /* QRCodeShortcutFuntion.h */,
 				544B790E20FF23C200EEFE35 /* Main.storyboard */,
 				544B791120FF23C300EEFE35 /* Assets.xcassets */,
@@ -87,6 +95,8 @@
 			children = (
 				544B791F20FF426600EEFE35 /* QRCodeImageGenerator.h */,
 				544B792020FF426600EEFE35 /* QRCodeImageGenerator.m */,
+				54ABF7362100406900D4EB0C /* QRCodeImageConvertToText.h */,
+				54ABF7372100406900D4EB0C /* QRCodeImageConvertToText.m */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -162,10 +172,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54ABF7382100406900D4EB0C /* QRCodeImageConvertToText.m in Sources */,
 				544B790D20FF23C200EEFE35 /* ViewController.m in Sources */,
 				544B792120FF426600EEFE35 /* QRCodeImageGenerator.m in Sources */,
 				544B791820FF23C300EEFE35 /* main.m in Sources */,
 				54ABF7312100273A00D4EB0C /* QRCodeGeneratorViewController.m in Sources */,
+				54ABF73521003BF800D4EB0C /* QRCodoAlbumViewController.m in Sources */,
 				544B790A20FF23C200EEFE35 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

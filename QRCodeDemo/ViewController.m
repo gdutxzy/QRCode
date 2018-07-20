@@ -9,7 +9,6 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-- (IBAction)targetStringTextField:(UITextField *)sender;
 
 @end
 
@@ -20,20 +19,16 @@
 
 }
 
-- (IBAction)QRCodeCamera:(UIButton *)sender {
-    
-}
-- (IBAction)QRCodeAlbum:(UIButton *)sender {
-    
-}
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
-- (IBAction)targetStringTextField:(UITextField *)sender {
+- (IBAction)unwindSegue:(UIStoryboardSegue *)sender{
+    NSLog(@"unwindSegue %@", sender);
 }
+
+
+
+
 @end

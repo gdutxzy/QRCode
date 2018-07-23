@@ -7,7 +7,7 @@
 //
 
 #import "QRCodoAlbumViewController.h"
-#import "QRCodeImageConvertToText.h"
+#import "QRCodeScanner.h"
 
 @interface QRCodoAlbumViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *qrcodeResult;
@@ -26,7 +26,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    NSString * result = [QRCodeImageConvertToText stringFromQRImage:image];
+    NSString * result = [QRCodeScanner stringFromQRCodeImage:image];
     self.qrcodeResult.text = result;
     
     [picker dismissViewControllerAnimated:YES completion:nil];

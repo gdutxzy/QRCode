@@ -10,5 +10,11 @@
 #import <UIKit/UIKit.h>
 
 @interface QRCodeImageConvertToText : NSObject
-+ (NSString *)convertToTextWithImage:(UIImage *)image;
+
+/**
+读取二维码图片的内容
+ @param image 二维码图片
+ @return 结果
+ */
++ (NSString *)stringFromQRImage:(UIImage *)image;
 @end

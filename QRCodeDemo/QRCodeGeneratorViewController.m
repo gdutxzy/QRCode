@@ -52,8 +52,8 @@
     if (self.bgColorTextField.text.length != 0) {
         bgcolor = UIColorWithStr(self.bgColorTextField.text);
     }
-    image = [QRCodeImageGenerator CIImage:image ConvertPointColor:pointColor backgroudColor:bgcolor];
-    self.QRCodeImageView.image = [QRCodeImageGenerator UIImageFromCIImage:image withSize:self.QRCodeImageView.bounds.size];
+    image = [QRCodeImageGenerator image:image ConvertPointColor:pointColor backgroudColor:bgcolor];
+    self.QRCodeImageView.image = [QRCodeImageGenerator imageFromCIImage:image withSize:self.QRCodeImageView.bounds.size];
 }
 
 

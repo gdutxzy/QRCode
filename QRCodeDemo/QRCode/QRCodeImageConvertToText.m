@@ -9,7 +9,14 @@
 #import "QRCodeImageConvertToText.h"
 
 @implementation QRCodeImageConvertToText
-+ (NSString *)convertToTextWithImage:(UIImage *)image{
-    
++ (NSString *)stringFromQRImage:(UIImage *)image{
+    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy: CIDetectorAccuracyHigh}];
+    CIImage *ciImage = [[CIImage alloc] initWithImage:image];
+    NSArray *features = [detector featuresInImage:ciImage];
+    NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:features.count];
+    for (CIQRCodeFeature *feature in features) {
+        [arrayM addObject:feature.messageString];
+    }
+    return arrayM.lastObject;
 }
 @end

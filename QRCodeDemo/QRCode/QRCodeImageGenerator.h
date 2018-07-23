@@ -19,9 +19,9 @@
  @param bgColor 背景颜色
  @return 转换后的CIImage
  */
-+ (CIImage *)CIImage:(CIImage *)image ConvertPointColor:(UIColor *)pointColor backgroudColor:(UIColor *)bgColor;
++ (CIImage *)image:(CIImage *)image ConvertPointColor:(UIColor *)pointColor backgroudColor:(UIColor *)bgColor;
 
 
 /// 将CIImage转换成指定大小的UIImage
-+ (UIImage *)UIImageFromCIImage:(CIImage *)ciimage withSize:(CGSize)size;
++ (UIImage *)imageFromCIImage:(CIImage *)ciimage withSize:(CGSize)size;
 @end

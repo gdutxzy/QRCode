@@ -21,7 +21,7 @@
     return qrFilter.outputImage;
 }
 
-+ (CIImage *)CIImage:(CIImage *)image ConvertPointColor:(UIColor *)pointColor backgroudColor:(UIColor *)bgColor{
++ (CIImage *)image:(CIImage *)image ConvertPointColor:(UIColor *)pointColor backgroudColor:(UIColor *)bgColor{
     CIFilter *colorFilter = [CIFilter filterWithName:@"CIFalseColor"
                                        keysAndValues:
                              @"inputImage",image,
@@ -32,7 +32,7 @@
 }
 
 
-+ (UIImage *)UIImageFromCIImage:(CIImage *)ciimage withSize:(CGSize)size{
++ (UIImage *)imageFromCIImage:(CIImage *)ciimage withSize:(CGSize)size{
     CGImageRef cgImage = [[CIContext contextWithOptions:nil] createCGImage:ciimage fromRect:ciimage.extent];
     UIGraphicsBeginImageContext(size);
     CGContextRef context = UIGraphicsGetCurrentContext();

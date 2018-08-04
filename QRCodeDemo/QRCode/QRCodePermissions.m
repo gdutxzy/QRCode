@@ -14,10 +14,13 @@
 /// 允许使用摄像头
 + (BOOL)allowCamera{
     BOOL isCameraValid = YES;
+    [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+        
+    }];
     //ios7之前系统默认拥有权限
     if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-        if (authStatus == AVAuthorizationStatusDenied) {
+        if (authStatus == AVAuthorizationStatusDenied || authStatus == AVAuthorizationStatusRestricted) {
             isCameraValid = NO;
         }
     }
@@ -27,13 +30,13 @@
 + (BOOL)allowAlbum{
     if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
         ALAuthorizationStatus author = [ALAssetsLibrary authorizationStatus];
-        if ( author == ALAuthorizationStatusDenied ) {
+        if ( author == ALAuthorizationStatusDenied || author == ALAuthorizationStatusRestricted ) {
             return NO;
         }
         return YES;
     }
     PHAuthorizationStatus authorStatus = [PHPhotoLibrary authorizationStatus];
-    if ( authorStatus == PHAuthorizationStatusDenied ) {
+    if ( authorStatus == PHAuthorizationStatusDenied || authorStatus == PHAuthorizationStatusRestricted ) {
         return NO;
     }
     return YES;

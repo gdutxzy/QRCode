@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,10 +59,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Code Scanner View Controller-->
         <scene sceneID="CWw-qb-hgV">
             <objects>
-                <viewController id="De6-e9-RSL" sceneMemberID="viewController">
+                <viewController id="De6-e9-RSL" customClass="QRCodeScannerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wJ2-z7-s0i"/>
                         <viewControllerLayoutGuide type="bottom" id="yie-7q-3UF"/>
@@ -71,12 +70,65 @@
                     <view key="view" contentMode="scaleToFill" id="Ukq-kb-b91">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEg-jF-yVR">
+                                <rect key="frame" x="20" y="25" width="31" height="30"/>
+                                <state key="normal" title="退出"/>
+                                <connections>
+                                    <segue destination="gtM-zU-g4k" kind="unwind" unwindAction="unwindSegue:" id="NwA-oi-HDh"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Hl-YQ-MGs">
+                                <rect key="frame" x="26" y="63" width="323" height="323"/>
+                                <color key="backgroundColor" red="0.87035839637944123" green="0.87035839637944123" blue="0.87035839637944123" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2Hl-YQ-MGs" secondAttribute="height" multiplier="1:1" id="3fY-jJ-9FX"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrH-uJ-KZq">
+                                <rect key="frame" x="156.5" y="416" width="62" height="30"/>
+                                <state key="normal" title="开始扫描"/>
+                                <connections>
+                                    <action selector="startScanAction:" destination="De6-e9-RSL" eventType="touchUpInside" id="cXo-MM-Y5G"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqD-T7-aHh">
+                                <rect key="frame" x="26" y="504" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描结果" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0z3-2h-bq5">
+                                <rect key="frame" x="26" y="463" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CEg-jF-yVR" firstAttribute="leading" secondItem="Ukq-kb-b91" secondAttribute="leadingMargin" constant="4" id="CDu-qq-LZk"/>
+                            <constraint firstItem="2Hl-YQ-MGs" firstAttribute="leading" secondItem="Ukq-kb-b91" secondAttribute="leading" constant="26" id="F74-mp-A5K"/>
+                            <constraint firstItem="0z3-2h-bq5" firstAttribute="top" secondItem="2Hl-YQ-MGs" secondAttribute="bottom" constant="77" id="Jxe-tE-Ili"/>
+                            <constraint firstItem="nrH-uJ-KZq" firstAttribute="centerX" secondItem="Ukq-kb-b91" secondAttribute="centerX" id="KCv-Jh-w20"/>
+                            <constraint firstItem="cqD-T7-aHh" firstAttribute="leading" secondItem="Ukq-kb-b91" secondAttribute="leading" constant="26" id="UXQ-yW-FCG"/>
+                            <constraint firstAttribute="trailing" secondItem="2Hl-YQ-MGs" secondAttribute="trailing" constant="26" id="VRU-6d-pGX"/>
+                            <constraint firstItem="cqD-T7-aHh" firstAttribute="top" secondItem="0z3-2h-bq5" secondAttribute="bottom" constant="20" id="XVW-ER-BtM"/>
+                            <constraint firstItem="nrH-uJ-KZq" firstAttribute="top" secondItem="2Hl-YQ-MGs" secondAttribute="bottom" constant="30" id="gG7-ok-jni"/>
+                            <constraint firstItem="CEg-jF-yVR" firstAttribute="top" secondItem="wJ2-z7-s0i" secondAttribute="bottom" constant="5" id="pjN-6A-AjT"/>
+                            <constraint firstItem="0z3-2h-bq5" firstAttribute="leading" secondItem="Ukq-kb-b91" secondAttribute="leading" constant="26" id="s5i-vi-H7b"/>
+                            <constraint firstItem="2Hl-YQ-MGs" firstAttribute="top" secondItem="CEg-jF-yVR" secondAttribute="bottom" constant="8" id="tLf-dO-jxw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scannerView" destination="2Hl-YQ-MGs" id="QgT-g0-NZ7"/>
+                        <outlet property="textLabel" destination="cqD-T7-aHh" id="4LH-05-JG5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oz6-KV-Wh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gtM-zU-g4k" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1457" y="-668"/>
+            <point key="canvasLocation" x="1456.8" y="-668.81559220389806"/>
         </scene>
         <!--Codo Album View Controller-->
         <scene sceneID="6L3-Og-lMT">

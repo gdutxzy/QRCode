@@ -18,6 +18,7 @@
 		549C002721060FB00087ED68 /* QRCodePermissions.m in Sources */ = {isa = PBXBuildFile; fileRef = 549C002621060FB00087ED68 /* QRCodePermissions.m */; };
 		54ABF7312100273A00D4EB0C /* QRCodeGeneratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ABF7302100273A00D4EB0C /* QRCodeGeneratorViewController.m */; };
 		54ABF73521003BF800D4EB0C /* QRCodoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ABF73421003BF800D4EB0C /* QRCodoAlbumViewController.m */; };
+		54CF9D802106CD6B0080D9DB /* QRCodeScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF9D7F2106CD6B0080D9DB /* QRCodeScannerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		54ABF73221002F3D00D4EB0C /* QRCodeShortcutFuntion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeShortcutFuntion.h; sourceTree = "<group>"; };
 		54ABF73321003BF800D4EB0C /* QRCodoAlbumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodoAlbumViewController.h; sourceTree = "<group>"; };
 		54ABF73421003BF800D4EB0C /* QRCodoAlbumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodoAlbumViewController.m; sourceTree = "<group>"; };
+		54CF9D7E2106CD6B0080D9DB /* QRCodeScannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeScannerViewController.h; sourceTree = "<group>"; };
+		54CF9D7F2106CD6B0080D9DB /* QRCodeScannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeScannerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 				54ABF7302100273A00D4EB0C /* QRCodeGeneratorViewController.m */,
 				54ABF73321003BF800D4EB0C /* QRCodoAlbumViewController.h */,
 				54ABF73421003BF800D4EB0C /* QRCodoAlbumViewController.m */,
+				54CF9D7E2106CD6B0080D9DB /* QRCodeScannerViewController.h */,
+				54CF9D7F2106CD6B0080D9DB /* QRCodeScannerViewController.m */,
 				54ABF73221002F3D00D4EB0C /* QRCodeShortcutFuntion.h */,
 				544B790E20FF23C200EEFE35 /* Main.storyboard */,
 				544B791120FF23C300EEFE35 /* Assets.xcassets */,
@@ -185,6 +190,7 @@
 				54ABF7312100273A00D4EB0C /* QRCodeGeneratorViewController.m in Sources */,
 				54ABF73521003BF800D4EB0C /* QRCodoAlbumViewController.m in Sources */,
 				544B790A20FF23C200EEFE35 /* AppDelegate.m in Sources */,
+				54CF9D802106CD6B0080D9DB /* QRCodeScannerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

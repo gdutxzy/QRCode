@@ -9,7 +9,7 @@
 #import "QRCodeGeneratorViewController.h"
 #import "QRCodeImageGenerator.h"
 #import "QRCodeShortcutFuntion.h"
-
+#import "QRCodePermissions.h"
 
 
 @interface QRCodeGeneratorViewController ()
@@ -22,7 +22,26 @@
 
 @implementation QRCodeGeneratorViewController
 - (IBAction)saveAlbum:(UIButton *)sender {
-    UIImageWriteToSavedPhotosAlbum(self.QRCodeImageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+    if ([QRCodePermissions allowAlbum]) {
+            UIImageWriteToSavedPhotosAlbum(self.QRCodeImageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+    }else{
+        
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"保存图片至相册需要相册授权" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:({
+            UIAlertAction * action = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            action;
+        })];
+        [alert addAction:({
+            UIAlertAction * action = [UIAlertAction actionWithTitle:@"去设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+            }];
+            action;
+        })];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+
 }
 //保存图片备用
 - (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo
@@ -70,6 +89,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
 /*
 #pragma mark - Navigation
 

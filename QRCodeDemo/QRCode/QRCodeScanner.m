@@ -202,6 +202,24 @@
     [self.drawLayer.sublayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
 }
 
+
+#pragma mark - 光感回调
+- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
+    CFDictionaryRef metadataDict = CMCopyDictionaryOfAttachments(NULL,sampleBuffer, kCMAttachmentMode_ShouldPropagate);
+    NSDictionary *metadata = [[NSMutableDictionary alloc] initWithDictionary:(__bridge NSDictionary*)metadataDict];
+    CFRelease(metadataDict);
+    NSDictionary *exifMetadata = [[metadata objectForKey:(NSString *)kCGImagePropertyExifDictionary] mutableCopy];
+    // 该值在 -5~12 之间
+    float brightnessValue = [[exifMetadata objectForKey:(NSString *)kCGImagePropertyExifBrightnessValue] floatValue];
+    if ((_lastBrightnessValue>0 && brightnessValue>0) ||
+        (_lastBrightnessValue<=0 && brightnessValue<=0)) {
+        return;
+    }
+    _lastBrightnessValue = brightnessValue;
+    
+    self.switchTorchStateBlock ? self.switchTorchStateBlock(brightnessValue<=0, YES) : nil;
+    
+}
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
     
